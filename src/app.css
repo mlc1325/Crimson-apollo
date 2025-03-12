@@ -1,0 +1,249 @@
+/* Import a clean modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-primary);
+  color: var(--text-primary);
+}
+
+:root {
+  --background-primary: #121212;
+  --background-secondary: #181818;
+  --background-tertiary: #242424;
+  --accent: #a83232; /* Crimson Accent */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Container */
+.add-entry-container {
+  padding: 15px;
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  border-radius: 10px;
+  width: 420px;
+  box-shadow: 0px 4px 10px var(--shadow);
+}
+
+/* Collapsible Sections */
+.collapsible {
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--background-tertiary);
+  transition: background 0.2s ease-in-out;
+}
+
+.collapsible:hover {
+  background: var(--hover-bg);
+}
+
+/* Toggle Button */
+.toggle-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  color: var(--text-primary);
+  border: none;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.toggle-btn:hover {
+  color: var(--accent);
+}
+
+/* Form Group */
+.form-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Inputs & Select */
+input, select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+  transition: border 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #b33c3c;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* Entries List */
+.entry-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--background-tertiary);
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease-in-out;
+}
+
+.entry-item:hover {
+  background: var(--hover-bg);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+  background: #ff4c4c;
+}
+
+/* Styles for the details dropdown */
+details {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+details[open] {
+  background: var(--background-tertiary);
+  box-shadow: 0px 4px 10px var(--shadow);
+}
+
+/* Styles for the summary (Unit title) */
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px;
+  color: var(--text-primary);
+  transition: color 0.2s ease-in-out;
+}
+
+summary:hover {
+  color: var(--accent);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 2px 10px var(--shadow);
+}
+
+/* Table Headers */
+th {
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Table Rows */
+td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Hover Effect on Rows */
+tbody tr:hover {
+  background: var(--hover-bg);
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.entries-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.entry-section {
+  flex: 1;
+  background: #2c2c2c;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .entries-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .entry-section {
+      width: 100%;
+  }
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+}
