@@ -38,7 +38,10 @@
         try {
             const querySnapshot = await getDocs(collection(db, "properties"));
             properties = querySnapshot.docs
-                .map(doc => ({ id: doc.id, ...doc.data() }))
+                .map(doc => {
+                    const data = doc.data() as { name: string, clientId: string };
+                    return { id: doc.id, ...data };
+                })
                 .filter(prop => prop.clientId === selectedClient);
         } catch (error) {
             errorMessage = "Failed to load properties.";
@@ -50,8 +53,8 @@
         try {
             const querySnapshot = await getDocs(collection(db, "units"));
             units = querySnapshot.docs
-                .map(doc => ({ id: doc.id, ...doc.data() }))
-                .filter(unit => unit.propertyId === selectedProperty);
+                .map(doc => ({ id: doc.id, ...(doc.data() as { unitNumber: string, style: string, squareFootage: string, propertyId: string }) }))
+                .filter((unit: { id: string, unitNumber: string, style: string, squareFootage: string, propertyId: string }) => unit.propertyId === selectedProperty);
         } catch (error) {
             errorMessage = "Failed to load units.";
         }
@@ -112,8 +115,8 @@
         </button>
         {#if showProperties}
             <div class="form-group">
-                <label>Select Client:</label>
-                <select bind:value={selectedClient} on:change={loadProperties}>
+                <label for="selectedClient">Select Client:</label>
+                <select id= "selectedClient"bind:value={selectedClient} on:change={loadProperties}>
                     <option value="" disabled>Select a client</option>
                     {#each clients as client}
                         <option value={client.id}>{client.name}</option>
@@ -131,8 +134,8 @@
         </button>
         {#if showUnits}
             <div class="form-group">
-                <label>Select Property:</label>
-                <select bind:value={selectedProperty} on:change={loadUnits}>
+                <label for="selectProperty">Select Property:</label>
+                <select id="selectProperty"bind:value={selectedProperty} on:change={loadUnits}>
                     <option value="" disabled>Select a property</option>
                     {#each properties as property}
                         <option value={property.id}>{property.name}</option>
@@ -152,8 +155,8 @@
         </button>
         {#if showResidents}
             <div class="form-group">
-                <label>Select Unit:</label>
-                <select bind:value={selectedUnit}>
+                <label for="selectUnit">Select Unit:</label>
+                <select id="selectUnit"bind:value={selectedUnit}>
                     <option value="" disabled>Select a unit</option>
                     {#each units as unit}
                         <option value={unit.id}>{unit.unitNumber} - {unit.style}</option>

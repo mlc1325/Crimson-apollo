@@ -18,6 +18,10 @@ Thumbs.db
 !.env.example
 !.env.test
 
+# Firebase
+#src/lib/firebase.js
+#src/lib/firebase.ts
+
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*

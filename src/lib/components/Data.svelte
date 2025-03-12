@@ -24,6 +24,7 @@ async function loadClients() {
     } catch (error) {
         errorMessage = "Failed to load clients.";
     }
+    
 }
 
 async function loadProperties() {
@@ -39,5 +40,5 @@ async function loadProperties() {
 }
 
 
-
+</script>
 
