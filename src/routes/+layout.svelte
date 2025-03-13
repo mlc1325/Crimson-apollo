@@ -26,6 +26,7 @@
     console.log(u);
   });
   });  
+  export const prerender = true
 </script>
 
 <div class="parallax" ></div>
