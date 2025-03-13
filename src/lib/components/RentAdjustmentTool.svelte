@@ -158,3 +158,100 @@
   {/each}
 </div>
 
+<style>
+  .card {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px #ff3366;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: #ff3366;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 51, 102, 0.9);
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    color: #bbb;
+}
+
+input[type="file"],
+input[type="month"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff3366;
+    box-shadow: 0 0 8px rgba(255, 51, 102, 0.7);
+}
+
+button {
+    background: linear-gradient(90deg, #ff3366, #ff0044);
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.7);
+    transition: transform 0.2s ease, box-shadow 0.3s;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.9);
+}
+
+details {
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-shadow: 0 0 8px rgba(255, 51, 102, 0.3);
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ff6688;
+    padding: 5px;
+}
+
+details summary:hover {
+    color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgba(255, 51, 102, 0.2);
+}
+</style>

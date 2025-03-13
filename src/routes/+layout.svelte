@@ -4,50 +4,64 @@
   import { onAuthStateChanged } from 'firebase/auth';
   import type { User as FirebaseUser } from 'firebase/auth';
   import '../app.css';
-  import Login from '$lib/components/Login.svelte';
   import NavBar from '$lib/components/NavBar.svelte';
   import {user} from '$lib/store';
-   
+    
   interface User extends FirebaseUser {
     role?: string;
   };
 
   // hear ye hear ye, I do declare
-  let currentTheme: 'light' | 'dark' = 'light';
-  let themes = ['light', 'dark'];
-  let sidebarOpen = false;
-  let darkMode = false;
+  
 
   onMount(() => {
     // Check if we're on the login page
     
         
     // Handle theme
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    currentTheme = savedTheme || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     
     // Handle auth state
     onAuthStateChanged(auth, (u) => {
     $user = u;
     console.log(u);
-    //if (!user && !isLoginPage) {
-     // goto('/login');
-   // } else if (user && isLoginPage) {
-      //goto('/');
-   // }
   });
   });  
 </script>
 
-
-<NavBar/>
-{#if $user !== null}
+<div class="parallax" ></div>
+<div class="nav">
+  <NavBar/>
   <slot/>
-  {:else}
-  <Login/>
-{/if}
+  
+</div>
 
+
+<style>
+  .parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/caback.webp');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, .5);
+    margin: 1vmax;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 1vmax;
+    display: flex;
+    columns: 2;
+  }
+</style>
 
 
   
