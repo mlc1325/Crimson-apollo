@@ -26,12 +26,15 @@
 	"dependencies": {
 		"@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
 		"@tailwindcss/vite": "^4.0.12",
+		"date-fns": "^4.1.0",
 		"dayjs": "^1.11.13",
 		"file-saver": "^2.0.5",
 		"firebase": "^11.4.0",
 		"firebase-admin": "^13.1.0",
 		"firebase-tools": "^13.32.0",
+		"html2canvas": "^1.4.1",
 		"jspdf": "^3.0.0",
+		"jspdf-autotable": "^5.0.2",
 		"papaparse": "^5.5.2"
 	}
 }

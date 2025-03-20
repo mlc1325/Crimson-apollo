@@ -1,10 +1,4 @@
-<!-- <script lang="ts">
-    import { auth } from "$lib/firebase";
-    import { onAuthStateChanged } from "firebase/auth";
-    import '../app.css';
-  
-    
-  </script> -->
+
   <script lang="ts">
   </script>
   

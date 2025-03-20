@@ -20,7 +20,7 @@
     {:else}
       <li><a href="/lettertool"><i class="fas fa-user"></i> Deli letter tool</a></li>
       <li><a href="/renttool"><i class="fas fa-user"></i> Subsidy tool</a></li>
-      <li><a href="/maintenance"><i class="fas fa-wrench"></i> Maintenance</a></li>
+      <li><a href="/analysis"><i class="fas fa-wrench"></i> Analysis</a></li>
       <li><a href="/admin"><i class="fas fa-envelope"></i> Admin</a></li>
       <li><a href="/login" class="nav.outrageous-nav a" on:click={handleLogout}>Logout</a></li>
     {/if}

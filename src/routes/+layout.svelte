@@ -15,12 +15,7 @@
   
 
   onMount(() => {
-    // Check if we're on the login page
-    
-        
-    // Handle theme
-    
-    // Handle auth state
+   
     onAuthStateChanged(auth, (u) => {
     $user = u;
     console.log(u);
@@ -44,7 +39,8 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('/caback.webp');
+    /*background-image: url('/caback.webp');*/
+    background-color: black;
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
