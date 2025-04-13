@@ -54,42 +54,70 @@
   }
 </script>
 <style>
-  /* Minimal styling for clarity */
+  /* DOS-Style Minimal Styling */
   .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
-  .error {
-    color: red;
-    margin-top: 0.5rem;
-  }
-  label {
-    display: block;
-    margin-top: 1rem;
-  }
-  input[type='file'],
-  input[type='number'] {
-    margin-top: 0.5rem;
-  }
-  button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
+  background: #000;               /* Solid black background */
+  border: 1px solid #00FF00;        /* Bright green border */
+  padding: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #00FF00;                  /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #00FF00;           /* DOS green borders */
+  padding: 8px;
+}
+
+th {
+  background: #000;                    /* Consistent black background */
+  color: #00FF00;
+}
+
+.error {
+  color: #FF0000;                     /* Bold red for errors */
+  margin-top: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+}
+
+input[type='file'],
+input[type='number'] {
+  margin-top: 0.5rem;
+  background: #000;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  font-family: "Courier New", Courier, monospace;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: #00FF00;
+  color: #000;
+  border: 1px solid #00FF00;
+  font-family: "Courier New", Courier, monospace;
+}
+
+button:hover {
+  background: #000;
+  color: #00FF00;
+}
+
 </style>
 
 <div class="container">

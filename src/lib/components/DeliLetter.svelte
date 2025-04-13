@@ -374,7 +374,7 @@
     <label for="csvUpload">Upload CSV:</label>
     <input type="file" id="csvUpload" accept=".csv" on:change={handleCSVUpload} />
     
-    <label for="balanceThreshold">Balance Threshold:</label>
+    <label for="balanceThreshold">Small Balance Threshold:</label>
     <input type="number" id="balanceThreshold" bind:value={balanceThreshold} />
     
     <button class="download-button" on:click={() => downloadTemplate('combined')}>Download Template</button>
@@ -382,67 +382,144 @@
   </div>
   
   <style>
-    .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
-      padding: 20px;
-      max-width: 500px;
-      margin: 2rem auto;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 10px #ff3366;
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    h3 {
-      color: #ff3366;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px #ff3366;
-    }
-    label {
-      display: block;
-      margin: 0.5rem 0 0.3rem;
-      color: #cccccc;
-    }
-    select,
-    input[type="number"],
-    input[type="file"] {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(0, 0, 0, 0.4);
-      color: #fff;
-      margin-bottom: 1rem;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    select:focus,
-    input[type="number"]:focus,
-    input[type="file"]:focus {
-      outline: none;
-      border-color: #ff3366;
-      box-shadow: 0 0 8px rgba(255, 51, 102, 0.7);
-    }
-    .download-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 10px 15px;
-      background: linear-gradient(45deg, #ff3366, #aa0044);
-      color: #fff;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(255, 51, 102, 0.7);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .download-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 51, 102, 1);
-    }
-    label {
-      display: block;
-      margin-top: 1rem;
-      margin-bottom: 0.3rem;
-      color: #ccc;
-    }
+   .container {
+  background: #000;               /* Solid black background */       /* Bright green border */
+  padding: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #00FF00;                  /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+.container {
+  position: relative;
+  background: #000;
+  color: #00FF00;
+  padding: 1rem;
+  /* Additional shadow to make the border pop */
+  box-shadow: 0 0 15px #00FF00;
+}
+
+
+/* The pseudo-element that creates the animated border */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #00FF00, #006600, #00FF00);
+  background-size: 300% 300%;
+  z-index: -1;                   /* Places the pseudo-element behind the container */
+  animation: electricBorder 4s linear infinite;
+}
+
+/* Keyframes to animate the border gradient, creating a slow moving "electricity" effect */
+@keyframes electricBorder {
+  0% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;    /* Keeping opacity at full brightness */
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+}
+
+
+
+h3 {
+  color: #00FF00;                  /* Heading in DOS-style green */
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  color: #88FF88;                  /* A slightly dimmer green for labels */
+}
+
+select,
+input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem;
+  border: 1px solid #00FF00;         /* DOS-style green border */
+  background: #000;                  /* Solid black background */
+  color: #00FF00;                    /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Style the file input's button */
+input[type="file"]::file-selector-button {
+  background: #000;
+  border: 1px solid #00FF00;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  /* Remove any default styling */
+  margin-right: 0.5rem;
+}
+
+input[type="month"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem;
+  border: 1px solid #00FF00;         /* DOS-style green border */
+  background: #000;                  /* Solid black background */
+  color: #00FF00;                    /* Bright green text */
+  font-family: "Courier New", Courier, monospace;  /* Retro monospaced font */
+}
+
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border: 1px solid #00FF00; /* DOS-style bright green border */
+  background: #000;          /* Solid black background */
+  color: #00FF00;            /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+
+input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem;
+  border: 1px solid #00FF00;         /* DOS-style green border */
+  background: #000;                  /* Solid black background */
+  color: #00FF00;                    /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+input[type="file"]:focus {
+  outline: none;
+  border-color: #00FF00;
+}
+
+.download-button {
+  font-family: "Courier New", Courier, monospace;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 15px;
+  background: #000;
+  color: #00FF00;
+  border: 1px solid #00FF00;  
+  text-decoration: none;
+  text-align: center;
+  
+}
+
+.download-button:hover {
+  background: #00FF00;
+  color: #000;
+  border: 1px solid #00FF00;
+  
+  
+}
+
   </style>
   

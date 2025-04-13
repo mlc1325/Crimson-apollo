@@ -250,9 +250,14 @@
   
   <style>
     .container {
-      padding: 1em;
-      font-family: sans-serif;
-    }
+  background: #000;               /* Solid black background */
+  border: 1px solid #00FF00;        /* Bright green border */
+  padding: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #00FF00;                  /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
     .input-group {
       margin-bottom: 1em;
     }

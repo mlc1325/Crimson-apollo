@@ -49,71 +49,74 @@
   </div>
   
   <style>
-    .register-container {
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(12px);
-      border-radius: 14px;
-      box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
-      width: auto;
-      margin: 50px auto;
-      padding: 20px;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-  
-    h2 {
-      color: #ff3366;
-      text-align: center;
-      margin-bottom: 20px;
-      text-shadow: 0 0 8px rgba(255, 51, 102, 0.8);
-    }
-  
-    .form-group {
-      margin-bottom: 15px;
-    }
-  
-    label {
-      display: block;
-      margin-bottom: 5px;
-      color: #aaa;
-    }
-  
-    input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background-color: rgba(0, 0, 0, 0.3);
-      color: #fff;
-      transition: border-color 0.3s;
-    }
-  
-    input:focus {
-      outline: none;
-      border-color: #ff3366;
-      box-shadow: 0 0 8px rgba(255, 51, 102, 0.6);
-    }
-  
-    button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(to right, #ff3366, #ff0044);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-  
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 51, 102, 0.7);
-    }
-  
-    .error {
-      text-align: center;
-      color: #ff8888;
-      margin-bottom: 15px;
-    }
+.register-container {
+  max-width: 400px;                /* Limit width to 400px */
+  margin: 50px auto;
+  padding: 20px;
+  background: #000;                /* Solid DOS-style black background */
+  border: 1px solid #00FF00;        /* Bright green border */
+  color: #00FF00;                 /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+
+h2 {
+  color: #00FF00;                 /* DOS-style green for headings */
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 4px #00FF00;    /* Subtle neon glow effect */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;  /* Ensure padding and border are included in the width */
+  padding: 10px;
+  border: 1px solid #00FF00;  /* DOS green border */
+  background-color: #000;     /* Solid black background */
+  color: #00FF00;             /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00FF00;      /* DOS green focus */
+  box-shadow: 0 0 4px #00FF00;
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #00FF00;
+  background: #00FF00;            /* Bright green background */
+  color: #000;                   /* Contrasting black text */
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #00FF00;
+}
+
+.error {
+  text-align: center;
+  color: #FF0000;                /* Bright red for error messages */
+  margin-bottom: 15px;
+  font-family: "Courier New", Courier, monospace;
+}
+
   </style>
   

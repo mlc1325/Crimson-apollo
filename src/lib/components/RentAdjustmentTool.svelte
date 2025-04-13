@@ -393,6 +393,8 @@
 
 <!-- Svelte Markup -->
 <div class="container">
+  <h3>Rent Adjustment Tool</h3>
+  <p>Upload a CSV file with rent adjustment data to generate a report.</p>
   <!-- Controls -->
   <div class="controls">
     <div class="date-range">
@@ -483,12 +485,15 @@
 
 <!-- Styles -->
 <style>
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
+   .container {
+  background: #000;               /* Solid black background */
+  border: 1px solid #00FF00;        /* Bright green border */
+  padding: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #00FF00;                  /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
   .controls {
     display: flex;
     flex-direction: column;
@@ -501,27 +506,60 @@
     align-items: center;
     gap: 1rem;
   }
-  input[type="file"],
-  input[type="month"] {
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(0,0,0,0.3);
-    color: #fff;
-  }
+  input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem;
+  border: 1px solid #00FF00;         /* DOS-style green border */
+  background: #000;                  /* Solid black background */
+  color: #00FF00;                    /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Style the file input's button */
+input[type="file"]::file-selector-button {
+  background: #000;
+  border: 1px solid #00FF00;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  /* Remove any default styling */
+  margin-right: 0.5rem;
+}
+
+input[type="month"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem;
+  border: 1px solid #00FF00;         /* DOS-style green border */
+  background: #000;                  /* Solid black background */
+  color: #00FF00;                    /* Bright green text */
+  font-family: "Courier New", Courier, monospace;  /* Retro monospaced font */
+}
+
+
   .text-error {
     color: #ff3366;
     font-weight: bold;
     font-size: 0.9rem;
   }
   button {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-    background: #007acc;
-    color: #fff;
-  }
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid #00FF00;             /* DOS green border */
+  background: #00FF00;                   /* DOS green background */
+  color: #000;                          /* Black text for contrast */
+  box-sizing: border-box;               /* Include padding and border in the total width */
+  font-family: "Courier New", Courier, monospace;  /* Retro monospaced font */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #00FF00;           /* Glow effect on hover */
+}
+
   table {
     border-collapse: collapse;
     margin-top: 1rem;

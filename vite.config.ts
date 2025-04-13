@@ -5,11 +5,11 @@ export default defineConfig({
   plugins: [sveltekit()], 
   optimizeDeps: {
     exclude: [
-      'firebase',
-      'firebase/app',
-      'firebase/auth',
-      'firebase/firestore',
-      'firebase/storage'
+      // 'firebase',
+      // 'firebase/app',
+      // 'firebase/auth',
+      // 'firebase/firestore',
+      // 'firebase/storage'
     ]
   }
 });

@@ -37,75 +37,78 @@
   </form>
 </div>
 
-<style>
-    .card {
-      width: auto;
-      margin: 100px auto;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 10px #ff3366;
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .card h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #ff3366;
-      text-shadow: 0 0 8px #ff3366;
-    }
-    
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-    
-    .form-group input {
-        width: 100%;
-        padding: 0.75rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 6px;
-      color: #fff;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    
-    .form-group input:focus {
-      outline: none;
-      border-color: #ff3366;
-      box-shadow: 0 0 12px rgba(255, 51, 102, 0.7);
-    }
-    
-    .login-button {
-      width: 100%;
-      padding: 0.75rem;
-      background: linear-gradient(90deg, #ff3366, #ff0044);
-      border: none;
-      border-radius: 6px;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 0 12px rgba(255, 51, 102, 0.7);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    
-    .login-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 16px rgba(255, 51, 102, 1);
-    }
-    
-    .error-message {
-      margin-bottom: 1rem;
-      color: #ff8888;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+<style>.card {
+  max-width: 400px;               /* Constrain the card's width for a more compact look */
+  width: 100%;                    /* Make the card responsive */
+  margin: 100px auto;
+  padding: 2rem;
+  background: #000;               /* Solid black background */
+  border: 1px solid #00FF00;       /* Bright green DOS-style border */
+  color: #00FF00;                 /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;         /* Include padding and border in the total width */
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #00FF00;                /* DOS green for headings */
+  text-shadow: 0 0 5px #00FF00;   /* Subtle neon glow effect */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;         /* Ensures the input adapts to its container */
+  padding: 0.75rem;
+  background: #000;
+  border: 1px solid #00FF00;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #00FF00;
+  box-shadow: 0 0 5px #00FF00;
+}
+
+.login-button {
+  width: 100%;
+  box-sizing: border-box;         /* Responsive button sizing */
+  padding: 0.75rem;
+  background: #00FF00;            /* Bright DOS green background */
+  border: 1px solid #00FF00;
+  color: #000;                   /* Black text for contrast */
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #00FF00;
+}
+
+.error-message {
+  margin-bottom: 1rem;
+  color: #FF0000;                /* DOS-styled error in bright red */
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
     </style>

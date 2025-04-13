@@ -17,7 +17,7 @@
 
     <div class="tabs">
         {#each tabs as tab}
-            <button on:click={() => activeTab = tab.component}>{tab.display}</button>
+            <button on:click={() => activeTab = tab.component}>{tab.label}</button>
         {/each}
     
         

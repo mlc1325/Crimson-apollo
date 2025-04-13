@@ -1,44 +1,43 @@
-/* Import a clean modern font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+/* DOS Style CSS */
 
+/* No modern web fonts – using a system monospaced font for that retro vibe */
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--background-primary);
-  color: var(--text-primary);
+  background: #000000;       /* Black background */
+  color: #00FF00;           /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
+/* Define DOS-inspired color variables */
 :root {
-  --background-primary: #121212;
-  --background-secondary: #181818;
-  --background-tertiary: #242424;
-  --accent: #a83232; /* Crimson Accent */
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow: rgba(0, 0, 0, 0.4);
-  --hover-bg: rgba(255, 255, 255, 0.1);
+  --background-primary: #000000;
+  --background-secondary: #000000;
+  --background-tertiary: #000000;
+  --accent: #00FF00;         /* Use the same bright green for accents */
+  --text-primary: #00FF00;
+  --text-secondary: #88FF88;  /* Dimmer green for secondary text */
+  --border-color: #00FF00;
+  --hover-bg: #111111;        /* A slightly lighter black for hover effects */
 }
 
-/* Container */
+/* Main Container */
 .add-entry-container {
-  padding: 15px;
+  padding: 10px;
   background: var(--background-secondary);
   color: var(--text-primary);
-  border-radius: 10px;
+  border: 1px solid var(--border-color);
   width: 420px;
-  box-shadow: 0px 4px 10px var(--shadow);
 }
 
 /* Collapsible Sections */
 .collapsible {
   margin-bottom: 10px;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 10px;
+  padding: 5px;
   background: var(--background-tertiary);
-  transition: background 0.2s ease-in-out;
 }
 
 .collapsible:hover {
@@ -52,14 +51,9 @@ body {
   background: none;
   color: var(--text-primary);
   border: none;
-  padding: 8px;
-  font-weight: 600;
+  padding: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
-}
-
-.toggle-btn:hover {
-  color: var(--accent);
 }
 
 /* Form Group */
@@ -67,17 +61,14 @@ body {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-/* Inputs & Select */
+/* Inputs & Select Elements */
 input, select {
-  padding: 8px;
-  border-radius: 5px;
+  padding: 5px;
   border: 1px solid var(--border-color);
   background: var(--background-tertiary);
   color: var(--text-primary);
-  transition: border 0.2s ease-in-out;
 }
 
 input:focus, select:focus {
@@ -88,21 +79,19 @@ input:focus, select:focus {
 /* Buttons */
 button {
   background: var(--accent);
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 20px;
-  font-weight: 600;
+  color: #000000;   /* Black text for contrast on the green button */
+  padding: 5px 10px;
+  border: 1px solid var(--border-color);
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
 }
 
 button:hover {
-  background: #b33c3c;
+  background: #00DD00;
 }
 
 button:disabled {
-  background: #555;
+  background: #555555;
+  color: #999999;
   cursor: not-allowed;
 }
 
@@ -110,11 +99,10 @@ button:disabled {
 .entry-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   background: var(--background-tertiary);
-  padding: 8px;
-  border-radius: 6px;
-  transition: background 0.2s ease-in-out;
+  padding: 5px;
+  border: 1px solid var(--border-color);
 }
 
 .entry-item:hover {
@@ -123,127 +111,114 @@ button:disabled {
 
 /* Delete Button */
 .delete-btn {
-  background: #d32f2f;
-  color: white;
-  border: none;
-  padding: 6px 8px;
-  border-radius: 6px;
+  background: #AA0000;
+  color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 3px 5px;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
 }
 
 .delete-btn:hover {
-  background: #ff4c4c;
+  background: #FF0000;
 }
 
-/* Styles for the details dropdown */
+/* Details Dropdown */
 details {
   background: var(--background-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
 }
 
 details[open] {
   background: var(--background-tertiary);
-  box-shadow: 0px 4px 10px var(--shadow);
 }
 
-/* Styles for the summary (Unit title) */
+/* Summary (Clickable Title) */
 summary {
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  padding: 5px;
-  color: var(--text-primary);
-  transition: color 0.2s ease-in-out;
+  padding: 3px;
 }
 
-summary:hover {
-  color: var(--accent);
-}
-
-/* Table styling */
+/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background: var(--background-secondary);
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0px 2px 10px var(--shadow);
 }
 
-/* Table Headers */
 th {
   background: var(--background-tertiary);
   color: var(--text-primary);
-  font-weight: 600;
-  padding: 10px;
+  padding: 5px;
   text-align: left;
-  border-bottom: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
 }
 
-/* Table Rows */
 td {
-  padding: 8px;
-  border-bottom: 1px solid var(--border-color);
+  padding: 5px;
+  border: 1px solid var(--border-color);
   color: var(--text-secondary);
 }
 
-/* Hover Effect on Rows */
+/* Table Row Hover Effects */
 tbody tr:hover {
   background: var(--hover-bg);
 }
 
+/* Admin Container */
 .admin-container {
   max-width: 1200px;
   margin: auto;
-  padding: 20px;
-  background: #1e1e1e;
-  color: white;
-  border-radius: 8px;
+  padding: 10px;
+  background: #000000;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   text-align: center;
 }
 
+/* Heading Styles */
 h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
+/* Entries Container Layout */
 .entries-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 10px;
 }
 
+/* Entry Section */
 .entry-section {
   flex: 1;
-  background: #2c2c2c;
-  padding: 15px;
-  border-radius: 8px;
+  background: #000000;
+  padding: 10px;
+  border: 1px solid var(--border-color);
   min-width: 300px;
 }
 
+/* Responsive Layout */
 @media (max-width: 768px) {
   .entries-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
-
   .entry-section {
-      width: 100%;
+    width: 100%;
   }
 }
 
 /* Responsive Table */
 @media (max-width: 768px) {
   table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
+

@@ -80,7 +80,7 @@
     });
 </script>
 
-<div class="add-entry-container">
+<div class="container">
     <h2>Modify Entries</h2>
 
     <div class="collapsible">
@@ -171,3 +171,15 @@
         {/if}
     </div>
 </div>
+
+<style>
+       .container {
+  background: #000;               /* Solid black background */
+  border: 1px solid #00FF00;        /* Bright green border */
+  padding: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #00FF00;                  /* Bright green text */
+  font-family: "Courier New", Courier, monospace;
+}
+</style>
